@@ -1,4 +1,14 @@
-for all the info about this plugin go to the waystonewarps plugin page: https://github.com/mizarc/waystone-warps
+
+
+The original plugin was made by Mizarc. for all the info about their plugin go to the waystonewarps plugin page: https://github.com/mizarc/waystone-warps
+
+I added Bedrock support for geyser servers.
+bedrock players get a special naming ui instead of the anvil ui.
+
+https://github.com/user-attachments/assets/3967b698-bcbb-4767-9cfd-8834616f0e90
+
+
+
 
 ## new Permissions
 
