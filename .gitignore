@@ -1,0 +1,20 @@
+### IDE ###
+.vscode/
+.idea/
+.project
+.classpath
+
+### Kotlin ###
+*.class
+*.log
+hs_err_pid*
+
+### Gradle ###
+.gradle
+build/
+local.properties
+gradle-app.setting
+.gradletasknamecache
+
+# Keep Gradle wrapper jar
+!gradle-wrapper.jar

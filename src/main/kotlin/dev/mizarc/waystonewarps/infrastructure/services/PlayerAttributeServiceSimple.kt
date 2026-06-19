@@ -1,0 +1,23 @@
+package dev.mizarc.waystonewarps.infrastructure.services
+
+import dev.mizarc.waystonewarps.application.services.ConfigService
+import dev.mizarc.waystonewarps.application.services.PlayerAttributeService
+import java.util.*
+
+class PlayerAttributeServiceSimple(private val configService: ConfigService): PlayerAttributeService {
+    override fun getWarpLimit(playerId: UUID): Int {
+        return PermissionWarpLimit.get(playerId) ?: configService.getWarpLimit()
+    }
+
+    override fun getTeleportCost(playerId: UUID): Double {
+        return PermissionWarpCost.get(playerId) ?: configService.getTeleportCostAmount()
+    }
+
+    override fun getTeleportTimer(playerId: UUID): Int {
+        return PermissionWarpTimer.get(playerId) ?: configService.getTeleportTimer()
+    }
+
+    override fun getTeleportCooldown(playerId: UUID): Int {
+        return PermissionWarpCooldown.get(playerId) ?: configService.getTeleportCooldown()
+    }
+}

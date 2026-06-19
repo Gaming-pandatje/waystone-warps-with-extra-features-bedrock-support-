@@ -1,0 +1,323 @@
+# The language of text elements.
+# EN - Original
+# add more <?>.properties files in the override folder to
+plugin_language: EN
+
+# The amount of waystone warps a player is allowed to create.
+# Players can override this with a numeric permission, such as waystone.4 or waystone.19.
+warp_limit: 3
+
+# The time it takes for the teleport to occur.
+teleport_timer: 5
+
+# The cooldown in seconds after a successful teleport before the player can use a waystone again.
+teleport_cooldown: 30
+
+# If waystone teleportation should charge players.
+# When false, all teleport cost settings below are ignored.
+teleport_cost: false
+
+# The type of cost that is required for teleportation. This can be set to:
+# - ITEM
+# - XP
+# - MONEY
+teleport_cost_type: ITEM
+
+# If the cost type is set to item, this value will be used to determine what
+# item to consume on teleport.
+teleport_cost_item: ENDER_PEARL
+
+# If set, only items with this exact item_model component will be accepted as
+# the teleport cost item. Leave empty to accept any item of the above material.
+teleport_cost_item_model: ""
+
+# The amount it costs to teleport. This is the amount of item if set to item,
+# amount of xp levels if set to xp, and the amount of money if set to money.
+# Decimals can be used for money type. Only used when distance scaling is disabled.
+teleport_cost_amount: 4
+
+# If enabled, the teleport cost scales with the distance to the destination waystone.
+# Only applies when teleport_cost_type is set to ITEM.
+teleport_cost_distance_scaling: true
+
+# The minimum cost (in items) when distance scaling is enabled. Used for very short distances.
+teleport_cost_min: 1
+
+# The maximum cost (in items) when distance scaling is enabled.
+teleport_cost_max: 30
+
+# The distance (in blocks) at which the maximum cost is reached.
+# Uses a square-root curve, so costs rise quickly at short range and flatten at long range.
+teleport_cost_scale_distance: 10000.0
+
+# If the player can open the warp list menu via right-clicking on a compass.
+warps_menu_via_compass: true
+
+# If the player can open the warp list menu via right-clicking on a waystone.
+# This replaces warp management menu to be shift-right click instead.
+warps_menu_via_waystone: false
+
+# If a hologram should display above the waystone showing its name and location.
+holograms_enabled: true
+
+# If world name should be displayed with coordinates in warp menu.
+world_name_enabled: true
+
+# If a boss bar should be displayed during teleport countdown.
+boss_bar_enabled: false
+
+# If the warp group system should be enabled, allowing you to tag warps to appear in a given category.
+warp_groups_enabled: false
+
+# The blocks that can be used to transform the waystone appearance. This
+# contains all the required blocks that make up the waystone that must be in the
+# following order:
+#
+#    ------    < 1 Upper Block
+#   --------
+#   |      |   < 2 Primary Block
+#   |      |
+#   --------
+#    ------     < 3 Lower Block
+#     ----      < 4 Pillar Block
+#   --------    < 5 Bottom Slab
+waystone_skins:
+  SMOOTH_STONE:
+    - SMOOTH_STONE
+    - LODESTONE
+    - SMOOTH_STONE
+    - SMOOTH_STONE
+    - SMOOTH_STONE_SLAB
+  STONE_BRICKS:
+    - STONE_BRICKS
+    - CHISELED_STONE_BRICKS
+    - STONE_BRICKS
+    - STONE_BRICKS
+    - STONE_BRICK_SLAB
+  DEEPSLATE_TILES:
+    - DEEPSLATE_TILES
+    - CHISELED_DEEPSLATE
+    - DEEPSLATE_TILES
+    - DEEPSLATE_TILES
+    - DEEPSLATE_TILE_SLAB
+  POLISHED_TUFF:
+    - POLISHED_TUFF
+    - CHISELED_TUFF
+    - POLISHED_TUFF
+    - POLISHED_TUFF
+    - POLISHED_TUFF_SLAB
+  TUFF_BRICKS:
+    - TUFF_BRICKS
+    - CHISELED_TUFF_BRICKS
+    - TUFF_BRICKS
+    - TUFF_BRICKS
+    - TUFF_BRICK_SLAB
+  RESIN_BRICKS:
+    - RESIN_BRICKS
+    - CHISELED_RESIN_BRICKS
+    - RESIN_BRICKS
+    - RESIN_BRICKS
+    - RESIN_BRICK_SLAB
+  CUT_SANDSTONE:
+    - CUT_SANDSTONE
+    - CHISELED_SANDSTONE
+    - CUT_SANDSTONE
+    - CUT_SANDSTONE
+    - CUT_SANDSTONE_SLAB
+  CUT_RED_SANDSTONE:
+    - CUT_RED_SANDSTONE
+    - CHISELED_RED_SANDSTONE
+    - CUT_RED_SANDSTONE
+    - CUT_RED_SANDSTONE
+    - CUT_RED_SANDSTONE_SLAB
+  NETHER_BRICKS:
+    - NETHER_BRICKS
+    - CHISELED_NETHER_BRICKS
+    - NETHER_BRICKS
+    - NETHER_BRICKS
+    - NETHER_BRICK_SLAB
+  POLISHED_BLACKSTONE:
+    - POLISHED_BLACKSTONE
+    - CHISELED_POLISHED_BLACKSTONE
+    - POLISHED_BLACKSTONE
+    - POLISHED_BLACKSTONE
+    - POLISHED_BLACKSTONE_SLAB
+  QUARTZ_BLOCK:
+    - QUARTZ_BLOCK
+    - CHISELED_QUARTZ_BLOCK
+    - QUARTZ_BLOCK
+    - QUARTZ_BLOCK
+    - QUARTZ_SLAB
+  WAXED_CUT_COPPER:
+    - WAXED_CUT_COPPER
+    - WAXED_CHISELED_COPPER
+    - WAXED_CUT_COPPER
+    - WAXED_CUT_COPPER
+    - WAXED_CUT_COPPER_SLAB
+  WAXED_EXPOSED_CUT_COPPER:
+    - WAXED_EXPOSED_CUT_COPPER
+    - WAXED_EXPOSED_CHISELED_COPPER
+    - WAXED_EXPOSED_CUT_COPPER
+    - WAXED_EXPOSED_CUT_COPPER
+    - WAXED_EXPOSED_CUT_COPPER_SLAB
+  WAXED_WEATHERED_CUT_COPPER:
+    - WAXED_WEATHERED_CUT_COPPER
+    - WAXED_WEATHERED_CHISELED_COPPER
+    - WAXED_WEATHERED_CUT_COPPER
+    - WAXED_WEATHERED_CUT_COPPER
+    - WAXED_WEATHERED_CUT_COPPER_SLAB
+  WAXED_OXIDIZED_CUT_COPPER:
+    - WAXED_OXIDIZED_CUT_COPPER
+    - WAXED_OXIDIZED_CHISELED_COPPER
+    - WAXED_OXIDIZED_CUT_COPPER
+    - WAXED_OXIDIZED_CUT_COPPER
+    - WAXED_OXIDIZED_CUT_COPPER_SLAB
+
+# Blocks that will be replaced with a solid platform when teleport to a waystone
+# occurs. It is recommended to add blocks that players are able to fall through
+# to prevent falling on teleport due to a malformed waystone teleport location.
+platform_replace_blocks:
+  - AIR
+  - WATER
+  - LAVA
+  - POWDER_SNOW
+  - STRING
+  - TRIPWIRE_HOOK
+  - LEVER
+  - LADDER
+  - BIG_DRIPLEAF
+  - COBWEB
+  - MAGMA_BLOCK
+  - IRON_TRAPDOOR
+  - OAK_TRAPDOOR
+  - SPRUCE_TRAPDOOR
+  - BIRCH_TRAPDOOR
+  - JUNGLE_TRAPDOOR
+  - ACACIA_TRAPDOOR
+  - CHERRY_TRAPDOOR
+  - DARK_OAK_TRAPDOOR
+  - PALE_OAK_TRAPDOOR
+  - MANGROVE_TRAPDOOR
+  - BAMBOO_TRAPDOOR
+  - CRIMSON_TRAPDOOR
+  - WARPED_TRAPDOOR
+  - COPPER_TRAPDOOR
+  - EXPOSED_COPPER_TRAPDOOR
+  - WEATHERED_COPPER_TRAPDOOR
+  - OXIDIZED_COPPER_TRAPDOOR
+  - WAXED_COPPER_TRAPDOOR
+  - WAXED_EXPOSED_COPPER_TRAPDOOR
+  - WAXED_WEATHERED_COPPER_TRAPDOOR
+  - WAXED_OXIDIZED_COPPER_TRAPDOOR
+  - OAK_SIGN
+  - SPRUCE_SIGN
+  - BIRCH_SIGN
+  - JUNGLE_SIGN
+  - ACACIA_SIGN
+  - CHERRY_SIGN
+  - DARK_OAK_SIGN
+  - PALE_OAK_SIGN
+  - MANGROVE_SIGN
+  - BAMBOO_SIGN
+  - CRIMSON_SIGN
+  - WARPED_SIGN
+  - OAK_WALL_SIGN
+  - SPRUCE_WALL_SIGN
+  - BIRCH_WALL_SIGN
+  - ACACIA_WALL_SIGN
+  - CHERRY_WALL_SIGN
+  - JUNGLE_WALL_SIGN
+  - DARK_OAK_WALL_SIGN
+  - PALE_OAK_WALL_SIGN
+  - MANGROVE_WALL_SIGN
+  - BAMBOO_WALL_SIGN
+  - OAK_HANGING_SIGN
+  - SPRUCE_HANGING_SIGN
+  - BIRCH_HANGING_SIGN
+  - JUNGLE_HANGING_SIGN
+  - ACACIA_HANGING_SIGN
+  - CHERRY_HANGING_SIGN
+  - DARK_OAK_HANGING_SIGN
+  - PALE_OAK_HANGING_SIGN
+  - MANGROVE_HANGING_SIGN
+  - BAMBOO_HANGING_SIGN
+  - CRIMSON_HANGING_SIGN
+  - WARPED_HANGING_SIGN
+  - OAK_WALL_HANGING_SIGN
+  - SPRUCE_WALL_HANGING_SIGN
+  - BIRCH_WALL_HANGING_SIGN
+  - ACACIA_WALL_HANGING_SIGN
+  - CHERRY_WALL_HANGING_SIGN
+  - JUNGLE_WALL_HANGING_SIGN
+  - DARK_OAK_WALL_HANGING_SIGN
+  - PALE_OAK_WALL_HANGING_SIGN
+  - MANGROVE_WALL_HANGING_SIGN
+  - CRIMSON_WALL_HANGING_SIGN
+  - WARPED_WALL_HANGING_SIGN
+  - BAMBOO_WALL_HANGING_SIGN
+  - TORCH
+  - WALL_TORCH
+  - SOUL_TORCH
+  - SOUL_WALL_TORCH
+  - REDSTONE_TORCH
+  - REDSTONE_WALL_TORCH
+  - CAMPFIRE
+  - SOUL_CAMPFIRE
+  - WHITE_BANNER
+  - ORANGE_BANNER
+  - MAGENTA_BANNER
+  - LIGHT_BLUE_BANNER
+  - YELLOW_BANNER
+  - LIME_BANNER
+  - PINK_BANNER
+  - GRAY_BANNER
+  - LIGHT_GRAY_BANNER
+  - CYAN_BANNER
+  - PURPLE_BANNER
+  - BLUE_BANNER
+  - BROWN_BANNER
+  - GREEN_BANNER
+  - RED_BANNER
+  - BLACK_BANNER
+  - WHITE_WALL_BANNER
+  - ORANGE_WALL_BANNER
+  - MAGENTA_WALL_BANNER
+  - LIGHT_BLUE_WALL_BANNER
+  - YELLOW_WALL_BANNER
+  - LIME_WALL_BANNER
+  - PINK_WALL_BANNER
+  - GRAY_WALL_BANNER
+  - LIGHT_GRAY_WALL_BANNER
+  - CYAN_WALL_BANNER
+  - PURPLE_WALL_BANNER
+  - BLUE_WALL_BANNER
+  - BROWN_WALL_BANNER
+  - GREEN_WALL_BANNER
+  - RED_WALL_BANNER
+  - BLACK_WALL_BANNER
+  - OAK_FENCE_GATE
+  - SPRUCE_FENCE_GATE
+  - BIRCH_FENCE_GATE
+  - JUNGLE_FENCE_GATE
+  - ACACIA_FENCE_GATE
+  - CHERRY_FENCE_GATE
+  - DARK_OAK_FENCE_GATE
+  - PALE_OAK_FENCE_GATE
+  - MANGROVE_FENCE_GATE
+  - BAMBOO_FENCE_GATE
+  - CRIMSON_FENCE_GATE
+  - WARPED_FENCE_GATE
+  - STONE_BUTTON
+  - POLISHED_BLACKSTONE_BUTTON
+  - OAK_BUTTON
+  - SPRUCE_BUTTON
+  - BIRCH_BUTTON
+  - JUNGLE_BUTTON
+  - ACACIA_BUTTON
+  - CHERRY_BUTTON
+  - DARK_OAK_BUTTON
+  - PALE_OAK_BUTTON
+  - MANGROVE_BUTTON
+  - BAMBOO_BUTTON
+  - CRIMSON_BUTTON
+  - WARPED_BUTTON
