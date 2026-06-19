@@ -1,129 +1,21 @@
-### ⚠️ [20 May 2026] Action Required: Upstream History Rewritten. If you have previously forked the project, please refer to this discussion page for further information: https://github.com/mizarc/waystone-warps/discussions/128
+for all the info about this plugin go to the waystonewarps plugin page: https://github.com/mizarc/waystone-warps
 
-![Banner](branding/banner.png)
-
-# Waystone Warps
-
-Transform your travels with the Waystone Warps plugin! Craft and place waystones to set up teleportation points throughout your world. Discover new waystones placed by others as you explore and easily teleport between them. Streamline your journey across the world knowing you can always teleport back home in a snap, or simply visit your friends in an instant.
-
-Here are some of the cool features you can expect:
-- **Physically Grounded** - Warps are bound via a physical waystone structure in the world, making the experience much more immersive.
-- **Intuitive GUI Menus** - Your entire waystone can be managed using click menus. Never need to type a command ever again.
-- **Manage Access Easily** - Limit your waystones to only you, open it up to your friends, or leave it out there for the public to find.
-- **Teleportation Fees** - Let your players work for it! Change teleportation costs between xp, items, or even a provided economy plugin.
-
-## Installation
-
-Download the latest release (.jar file) from the releases tab and place it in your server's plugins folder. 
-
-For additional functionality such as per player/rank permissions and warp limits, you must install 
-[Vault](https://www.spigotmc.org/resources/vault.34315/) as well as a compatible permission and chat
-metadata provider. [LuckPerms](https://luckperms.net/) is a recommended plugin for handling both.
-
-Additionally cross-world warps can be limited to world groups if [Multiverse-Inventories](https://mvplugins.org/inventories/) is installed.
-
-## Getting Started
-
-To establish a waystone warp, place down a lodestone on top of a smooth stone block, then right click the lodestone. This opens up a creation menu where you are able to 
-name your warp. Once the waystone warp is established, you will be presented with various options to do with warp management.
-
-To discover waystones made by other players, right click a waystone and watch the particles change colours.
-
-To teleport to waystones, right click with a compass in hand. This will bring up a menu listing all your discovered waystons. Click on the waystone of choice to teleport to it.
-
-## Permissions
+## new Permissions
 
 | Permission Node                          | Description |
 |------------------------------------------|-------------|
-| `waystonewarps.command.warpmenu`         | Allows the use of the warpmenu command to open up the menu that allows players to teleport to warps. |
-| `waystonewarps.bypass.open_menu`         | Allows access to open the management menu. |
-| `waystonewarps.bypass.access_control`    | Allows access to change the access control. |
-| `waystonewarps.bypass.manage_players`    | Allows access to manage players. |
-| `waystonewarps.bypass.rename`            | Allows access to rename the waystone. |
-| `waystonewarps.bypass.icon`              | Allows access to change the waystone icon. |
-| `waystonewarps.bypass.relocate`          | Allows access to relocate the waystone. |
-| `waystonewarps.bypass.break`             | Allows breaking any waystone regardless of ownership. |
-| `waystonewarps.bypass.private_access`    | Allows access to private waystones without being whitelisted. |
-| `waystonewarps.bypass.cost`              | Allows teleporting without paying waystone costs. |
-| `waystonewarps.admin.invalids.list`      | Allows usage of the list command. |
-| `waystonewarps.admin.invalids.remove`    | Allows usage of remove command. |
-| `waystonewarps.admin.invalids.removeall` | Allows usage of removeall command. |
-| `waystonewarps.admin.global_warp`        | Allows setting a waystone to global access level. |
-| `waystonewarps.admin.manage_groups`      | Allows managing global warp groups. |
-| `waystonewarps.teleport`                 | Allows teleportation |
-| `waystonewarps.teleport.interworld`      | Allows teleportation between different worlds |
-| `waystonewarps.teleport.interworldgroup` | Allows teleportation between different worlds of same world group (requires [Multiverse-Inventories](https://mvplugins.org/inventories/)) |
-| `waystonewarps.create`                   | Allow the creation of warps |
-| `waystonewarps.discover`                 | Allow the discovery of warps |
+| `waystonewarps.assign_group`         | Allows player to change the group of a waystone|
 
-## Player Specific Value Overrides
-If you require a more dynamic way of setting warp limits/timers/cost values for a player to override the configuration
-based values, you can use the these following methods to do so.
+## new commands
 
-There's two ways to set values for a player depending on what permission plugin you have installed. Modern permission
-plugins such as LuckPerms allow for metadata based value setting, which allows for a greater set of flexibility for
-numerical values. For legacy systems, you can set values via permission nodes instead:
-
-### Metadata-based
-Ensure that you have a Vault provider installed to set limits as described out in the installation section. Each Vault 
-provider plugin has its own way of implementing this feature. As LuckPerms is the recommended provider, instructions 
-will make use of it as such.
-
-To set a metadata for a player, use command:
-
-`/lp group <group_name> meta set <limit_name> <desired_number>`
-
-For groups:
-
-`/lp user <user_name> meta set <limit_name> <desired_number>`
-
-Here are the different limits you can set:
-
-| Permission Node                   | Description |
+| commands                  | Description |
 |-----------------------------------|-------------|
-| `waystonewarps.warp_limit`        | Defines how many waystone warps a player can create. |
-| `waystonewarps.teleport_cost`     | Defines how much it costs to teleport. |
-| `waystonewarps.teleport_timer`    | Defines how long it takes to teleport. |
-| `waystonewarps.teleport_cooldown` | Defines how long it takes to teleport. |
+| `/warpdefaultgroup none or groupname`        | sets the default group. every new waystone wil be assigned to this group. |
 
-### Permission-based
-Permission based limits work as a fallback for when no metadata provider is available. If a value is set here but a
-metadata provider is available, these values will be ignored.
-
-Here are the different permissions you can set:
-
-| Permission Node                            | Description                                                                                                                                      |
-|--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| `waystonewarps.warp_limit.<number>`        | Sets a player's waystone creation limit, for example `waystonewarps.warp_limit.4` or `waystonewarps.warp_limit.19`. Highest matching value wins. |
-| `waystonewarps.warp_limit.*`               | Allows unlimited waystone creation.                                                                                                              |
-| `waystonewarps.teleport_cost.<number>`     | Sets a player's teleport cost multiplier, for example `waystonewarps.teleport_cost.0.5` for half price. Lowest matching value wins.              |
-| `waystonewarps.teleport_cost.*`            | Allows free teleportation (zero cost).                                                                                                           |
-| `waystonewarps.teleport_timer.<number>`    | Sets a player's teleport timer in seconds, for example `waystonewarps.teleport_timer.3` for 3-second timer. Lowest matching value wins.          |
-| `waystonewarps.teleport_timer.*`           | Allows instant teleportation (zero timer).                                                                                                       |
-| `waystonewarps.teleport_cooldown.<number>` | Sets a player's teleport timer in seconds, for example `waystonewarps.teleport_timer.20` for 20-second cooldown. Lowest matching value wins.     |
-| `waystonewarps.teleport_cooldown.*`           | Allows instant teleportation (zero timer).                                                                                                       |
-
-## Building from Source
 
 ### Requirements
 
 - Java JDK 21 or newer
 - Git
 
-### Compiling
-
-```
-git clone https://github.com/mizarc/waystone-warps.git
-cd waystone-warps/
-./gradlew build
-```
-
-The compiled .jar binary can be found in the `build/libs` folder.
-
-## Support
-
-If you encounter any bugs, crashes, or unexpected behaviour, please [open an issue](https://github.com/mizarc/waystone-warps/issues) in this repository.
-
-## License
-
-Waystone Warps is licensed under the permissive MIT license. Please view [LICENSE](LICENSE) for more info.
+you can download the latest releas jar here: https://github.com/Gaming-pandatje/waystone-warps-with-extra-features-bedrock-support-/releases/
